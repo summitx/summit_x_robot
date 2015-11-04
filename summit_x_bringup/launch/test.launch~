@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- start hokuyo node -->
+  <!-- <node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_base_node" output="screen"/> -->
+  <include file="$(find summit_x_bringup_150603a)/launch/hokuyo_laser.launch"/>
+
+  <!-- start robot_state_publisher - publish fixed transforms, load robot model to param server -->
+  <include file="$(find x_ball_description)/launch/x_ball_state_robot.launch"/>
+
+  <!-- start sound node -->
+  <!-- <node pkg="sound_play" type="soundplay_node.py" name="sound_play_node" output="screen"/> -->
+
+  <!-- start summit_xl_controller node -->
+  <!-- node pkg="summit_xl_controller" type="summit_xl_controller" name="summit_xl_controller" output="screen"/ -->
+  <!--include file="$(find summit_x_bringup_150603a)/launch/summit_x_controller.launch"/-->
+
+  <!-- start robotnik_gyro -->
+  <!--include file="$(find robotnik_gyro)/launch/robotnik_gyro.launch" /-->
+
+  <!-- start summit_xl_pad nodes -->
+  <include file="$(find summit_x_bringup_150603a)/launch/summit_x_pad.launch" />
+
+  <!-- start novatel oemv gps -->
+  <!--include file="$(find novatel_oemv)/launch/novatel_oemv.launch" / -->
+
+  <!-- start mediatek gps -->
+  <!--<include file="$(find mediatek_gps)/launch/mediatek_gps.launch" /> -->
+
+  <!-- start axis camera -->
+  <!--include file="$(find axis_camera)/launch/axis_ptz.launch"/-->
+
+  <!-- start gpsd -->
+  <!--include file="$(find summit_x_bringup_150603a)/launch/gpsd_client.launch"/-->
+
+  <!-- start fotonic camera -->
+  <!-- include file="$(find fotonic_3dcamera)/launch/fotonic_3dcamera.launch"/-->
+
+  <!-- start sphere camera -->
+  <!-- <include file="$(find sphere_camera)/sphereptz.launchh"/> -->
+
+  <!-- start robotnik_arduimu and madgwick filter -->
+  <!--include file="$(find robotnik_arduimu)/launch/robotnik_arduimu_madgwick.launch"/-->
+
+  <!-- start robotnik_arduimu and madgwick filter -->
+  <!--<include file="$(find microstrain_3dmgx2_imuu)/microstrain_3dmgx2.launch"/>-->
+  
+  <!-- start openni -->
+  <include file="$(find openni2_launch)/launch/openni2.launch">
+	<arg name="camera" value="xtion_pro_cam"/>
+	<arg name="publish_tf" value="false"/>
+  </include>
+
+  <!-- start summit_xl_web server -->
+  <include file="$(find summit_x_bringup_150603a)/launch/summit_x_web.launch"/>
+
+  <!-- lwa4p arm -->
+  <include file="$(find summit_x_bringup_150603a/launch/lwa4p.launch"/>
+
+</launch>
