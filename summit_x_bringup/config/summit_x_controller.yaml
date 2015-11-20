@@ -1,6 +1,6 @@
 summit_xl_controller:
-  diameter_wheel: 0.220
-  gearbox_reduction: 12.52
+  diameter_wheel: 0.254 # 0.220 for rubber wheels and 0.254 for omni wheels
+  gearbox_reduction: 9.56
   kinematic_mode: "omni"
   motion_odometry: "false"
   motors_encoder: "true"
@@ -8,6 +8,8 @@ summit_xl_controller:
   take-over: false
   x_wam: "true"
   xwam: 'true'
+  imu_source: 'imu'
+  yaw_topic: 'imu/data'
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # If motors_encoders == true motors speed is multiplied by motors_encoder_factor
 # If no encoders it MUST be false
@@ -16,3 +18,5 @@ summit_xl_controller:
 # Gearbox (normally 12.52 or 9.56)
 #
 # Kinematic mode is "skid" or "omni"
+
+
